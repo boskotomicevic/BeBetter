@@ -44,8 +44,7 @@ app.frame_left.grid_rowconfigure(8, minsize=20)  # empty row with minsize as spa
 app.frame_left.grid_rowconfigure(11, minsize=10)  # empty row with minsize as spacing
 
 app.label_1 = customtkinter.CTkLabel(master=app.frame_left,
-                                      text="BeBetter",
-                                      text_font=("Roboto Medium", -16))  # font name and size in px
+                                      text="BeBetter")  # font name and size in px
 app.label_1.grid(row=1, column=0, pady=10, padx=10)
 
 app.button_1 = customtkinter.CTkButton(master=app.frame_left,
@@ -114,7 +113,7 @@ def userData():
    userWeight = app.weight.get()
    userActivity = app.activity.get()
    print(f"Age:{userAge}\n Sex: \n Height:{userHeight}\n Weight:{userWeight}\n Activity: \n{userActivity}")
-   app.mWL['text'] = 'test'
+   app.mWL.configure(text=app.mWL.cget('text') + '\ntest')
    #print(userWeight,'',userHeight,'',userWeight)
 
 app.age = customtkinter.CTkEntry(master=app.enterlabel,
@@ -195,7 +194,6 @@ app.mW = customtkinter.CTkLabel(master=app.frame_right, # mW --> maintain weight
                                           width=150,
                                           fg_color=("white", "black"),
                                           text='Maintain weight',
-                                          text_font=("Roboto Medium", -14),
                                           anchor='n')
                                           #justify=tkinter.CENTER)
 
@@ -208,7 +206,6 @@ app.mWL = customtkinter.CTkLabel(master=app.frame_right,
                                  width=150,
                                  fg_color=("white", "black"),
                                  text='Mild weight loss \n0.25kg/w',
-                                 text_font=("Roboto Medium", -14),
                                  anchor='n')
                                  #justify=tkinter.CENTER)
 
@@ -222,7 +219,6 @@ app.Wl = customtkinter.CTkLabel(master=app.frame_right,
                                   width=150,
                                   fg_color=("white", "black"),
                                   text='Mild weight loss \n0.5kg/w',
-                                  text_font=("Roboto Medium", -14),
                                   anchor='n')
                                   #justify=tkinter.CENTER)
 
@@ -235,7 +231,6 @@ app.Wl = customtkinter.CTkLabel(master=app.frame_right,
                                  width=150,
                                  fg_color=("white", "black"),
                                  text='Mild weight loss \n1kg/w',
-                                text_font=("Roboto Medium", -14),
                                  anchor='n')
                                 #justify=tkinter.CENTER)
 
